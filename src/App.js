@@ -6,8 +6,12 @@ function App() {
   return (
     // FRAGMENT
     <>
-      < Header />
-      < Header />
+      < Header title="Homepage">
+        <p>Texto passado como children para o componente.</p>
+      </ Header>
+      < Header title="Projects">
+        <h3>Aqui virão os títulos dos projetos o/</h3>
+      </ Header>
     </>
   );
 }

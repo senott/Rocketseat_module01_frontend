@@ -1,17 +1,25 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import Header from './components/Header';
 
 function App() { 
+
+  const [projects, setProjects] = useState(['Desenvolvimento de app', 'Front-end web']);
+
+  function handleAddProject() { 
+    setProjects([...projects, `Novo projeto ${Date.now()}`]);
+  }
+
   return (
     // FRAGMENT
     <>
-      < Header title="Homepage">
-        <p>Texto passado como children para o componente.</p>
-      </ Header>
-      < Header title="Projects">
-        <h3>Aqui virão os títulos dos projetos o/</h3>
-      </ Header>
+      < Header title="Projects" />
+
+      <ul>
+        { projects.map(project => <li key={ project }>{ project }</li>) }
+      </ul>
+
+      <button type="button" onClick={ handleAddProject }>Adicionar projeto</button>
     </>
   );
 }

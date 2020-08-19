@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 
 import Header from './components/Header';
+import './App.css'
+import backgroundImage from './assets/background.jpg';
 
 function App() { 
 
@@ -14,6 +16,8 @@ function App() {
     // FRAGMENT
     <>
       < Header title="Projects" />
+
+      <img src={ backgroundImage } alt="Landscape" width={500}/>
 
       <ul>
         { projects.map(project => <li key={ project }>{ project }</li>) }
